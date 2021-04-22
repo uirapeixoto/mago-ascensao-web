@@ -4,16 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewCharacterComponent } from '../view-character/view-character.component';
 import { NewCharacterComponent } from '../new-character/new-character.component';
 import { EditCharacterComponent } from '../edit-character/edit-character.component';
+import { ListCharactersComponent } from '../list-characters/list-characters.component';
 
 const characterRoutes : Routes = [
   {
       path:'', 
-      component: ViewCharacterComponent,
+      component: ListCharactersComponent,
       data: { title: 'Personagem'},
       children: [
-        { path: 'view', component: ViewCharacterComponent },
-        { path: 'add', component: NewCharacterComponent },
-        { path: 'edit', component: EditCharacterComponent }
+        { path: 'view/:id', component: ViewCharacterComponent },
+        { path: 'add',  component: NewCharacterComponent },
+        { path: 'edit/:id', component: EditCharacterComponent },
+        { path: 'list', component: ListCharactersComponent },
       ]
   }
 ];

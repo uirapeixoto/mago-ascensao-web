@@ -1,0 +1,10 @@
+<p>list-characters works!</p>
+<mat-tab-group dynamicHeight>
+    <mat-tab *ngFor="let usuario of usuarios" label="{{usuario.Nome}}" >
+        <div class="example-large-box mat-elevation-z4">
+            <div>
+                <p>{{usuario.Nome}}</p>
+            </div>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
