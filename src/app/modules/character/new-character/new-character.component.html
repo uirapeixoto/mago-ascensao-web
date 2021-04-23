@@ -55,10 +55,34 @@
         
     </mat-tab>
     <mat-tab label="Atributos">
-        <mat-form-field appearance="fill">
-            <mat-label>Força</mat-label>
-            <input [(ngModel)]="atributo.forca" id="forca" matInput name="forca" ngModel required #forca="ngModel">
-        </mat-form-field>
+        <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false"></star-rating>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Força</mat-label>
+                <mat-select matNativeControl [(ngModel)]="atributo.forca"  id="forca" name="forca" ngModel required
+                #forca="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Carisma</mat-label>
+                <input type="number" [(ngModel)]="atributo.carisma" id="carisma" matInput name="carisma" ngModel required
+                    #carisma="ngModel">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Percepção</mat-label>
+                <input type="number" [(ngModel)]="atributo.percepcao" id="percepcao" matInput name="percepcao" ngModel required
+                    #percepcao="ngModel">
+            </mat-form-field>
+        </div>
+        <div style="text-align:center">
+            <h1>
+              ng-starrating demo
+            </h1>
+            <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+          </div>
     </mat-tab>
     <mat-tab label="Habilidades">Content 3</mat-tab>
     <mat-tab label="Esferas">Content 4</mat-tab>

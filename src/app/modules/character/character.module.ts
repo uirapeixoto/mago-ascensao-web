@@ -14,8 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select'
 import { HomeCharacterComponent } from './home-character/home-character.component';
 import { FormsModule } from '@angular/forms';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    RatingModule,
     MatTabsModule,
     MatGridListModule,
     MatCardModule,
@@ -37,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatSelectModule,
     RoutingCharacterModule
   ],
   exports: [

@@ -29,3 +29,11 @@
   .example-spacer {
     flex: 1 1 auto;
   }
+
+  .star {
+    cursor: pointer;
+    color: var(--unCheckedColor);
+    font-size: var(--size);
+    width: var(--size);
+    display: inline-block;
+}
