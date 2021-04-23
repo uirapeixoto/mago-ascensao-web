@@ -10,6 +10,10 @@ const appRoutes: Routes = [
       .then(m => m.CharacterModule), 
       data:{ title: 'Personagem'}
   },
+  { path:'character',
+    loadChildren: 'src/app/modules/character/character.module#CharacterModule', 
+      data:{ title: 'Character'}
+  },
   
   // otherwise redirect to home
   { path: '**', redirectTo: '/home', pathMatch:'full' }

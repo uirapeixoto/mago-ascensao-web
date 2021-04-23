@@ -18,42 +18,36 @@ export class CharacterService {
   }
 
   buscarUsuarios(): Observable<Usuario[]>{
-    return this.httpClient.get<Usuario[]>(environment.urlapi +'/usuario')
+    return this.httpClient.get<Usuario[]>(environment.urlapi +'/usuarios')
     .pipe(
       retry(2)
       ,catchError(this.handleError)
     )
   } 
   buscarUsuarioPorId(id:number): Observable<Usuario>{
-    return this.httpClient.get<Usuario>(environment.urlapi +'/usuario/'+id)
+    return this.httpClient.get<Usuario>(environment.urlapi +'/usuarios/'+id)
     .pipe(
       retry(2)
       ,catchError(this.handleError)
     )
   } 
-  buscarUsuarioPorCategoriaId(id:number): Observable<Usuario[]>{
-    return this.httpClient.get<Usuario[]>(environment.urlapi +'/usuario?categoriaid='+id)
-    .pipe(
-      retry(2)
-      ,catchError(this.handleError)
-    )
-  } 
+  
   salvarUsuario(model: Usuario): Observable<Usuario>{
-    return this.httpClient.post<Usuario>(environment.urlapi +'/Usuarios', JSON.stringify(model), this.httpOptions)
+    return this.httpClient.post<Usuario>(environment.urlapi +'/usuarios', JSON.stringify(model), this.httpOptions)
     .pipe(
       retry(1)
       ,catchError(this.handleError)
     )
   }
   atualizarUsuario(model: Usuario): Observable<Usuario>{
-    return this.httpClient.put<Usuario>(environment.urlapi +'/Usuarios', JSON.stringify(model), this.httpOptions)
+    return this.httpClient.put<Usuario>(environment.urlapi +'/usuarios', JSON.stringify(model), this.httpOptions)
       .pipe(
         retry(1)
         ,catchError(this.handleError)
       )
   }
   deletarrUsuario(model: Usuario): Observable<Usuario>{
-    return this.httpClient.delete<Usuario>(environment.urlapi +'/usuario/' + model.Id, this.httpOptions)
+    return this.httpClient.delete<Usuario>(environment.urlapi +'/usuarios/' + model.id, this.httpOptions)
       .pipe(
         retry(2)
         ,catchError(this.handleError)

@@ -7,24 +7,43 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RoutingCharacterModule } from './routing-character/routing-character.module';
 import { ListCharactersComponent } from './list-characters/list-characters.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { HomeCharacterComponent } from './home-character/home-character.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     NewCharacterComponent,
     EditCharacterComponent,
     ViewCharacterComponent,
-    ListCharactersComponent
+    ListCharactersComponent,
+    HomeCharacterComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MatTabsModule,
     MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
     RoutingCharacterModule
   ],
   exports: [
     NewCharacterComponent,
     EditCharacterComponent,
-    ViewCharacterComponent
+    ViewCharacterComponent,
+    ListCharactersComponent
   ]
 })
 export class CharacterModule { }

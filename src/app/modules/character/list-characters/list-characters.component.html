@@ -1,10 +1,33 @@
-<p>list-characters works!</p>
+<mat-toolbar>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon plus-icon" aria-label="Example icon-button with heart icon">
+        <a [routerLink]="[ '/personagem/add']">
+            <mat-icon router-lin>add</mat-icon>
+        </a>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
 <mat-tab-group dynamicHeight>
-    <mat-tab *ngFor="let usuario of usuarios" label="{{usuario.Nome}}" >
-        <div class="example-large-box mat-elevation-z4">
-            <div>
-                <p>{{usuario.Nome}}</p>
-            </div>
-        </div>
+    <mat-tab *ngFor="let usuario of usuarios" label="{{usuario.nome}}">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{usuario.ficha_personagem[0].personagem.jogador}}</mat-card-title>
+                <mat-card-subtitle>{{usuario.ficha_personagem[0].personagem.nome}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src=""
+                alt="{{usuario.nome}}">
+            <mat-card-content>
+                <p>
+                    {{usuario.ficha_personagem[0].preludio.texto}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
     </mat-tab>
-  </mat-tab-group>
+</mat-tab-group>
