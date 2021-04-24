@@ -17,7 +17,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select'
 import { HomeCharacterComponent } from './home-character/home-character.component';
 import { FormsModule } from '@angular/forms';
-import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { RatingModule } from 'ng-starrating';
   imports: [
     CommonModule,
     FormsModule,
-    RatingModule,
     MatTabsModule,
     MatGridListModule,
     MatCardModule,

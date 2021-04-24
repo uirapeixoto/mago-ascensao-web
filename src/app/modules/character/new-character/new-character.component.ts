@@ -1,7 +1,8 @@
 import { Atributos, FichaPersonagem, Personagem, Usuario } from './../../../model/Personagem';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { StarRatingComponent } from 'ng-starrating';
+import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
+
 @Component({
   selector: 'app-new-character',
   templateUrl: './new-character.component.html',
@@ -9,10 +10,17 @@ import { StarRatingComponent } from 'ng-starrating';
 })
 export class NewCharacterComponent implements OnInit {
 
+  rating:number = 3;
+  starCount:number = 5;
+  starColor:StarRatingColor = StarRatingColor.accent;
+  starColorP:StarRatingColor = StarRatingColor.primary;
+  starColorW:StarRatingColor = StarRatingColor.warn;
+
   usuario = {} as  Usuario;
   fichaPersonagem = {} as FichaPersonagem;
   personagem = {} as  Personagem;
   atributo = {} as Atributos;
+  selected = {value:1, label:1};
   options = [
     {value:1, label:1},
     {value:2, label:2},
@@ -29,11 +37,10 @@ export class NewCharacterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {
-    alert(`Old Value:${$event.oldValue}, 
-      New Value: ${$event.newValue}, 
-      Checked Color: ${$event.starRating.checkedcolor}, 
-      Unchecked Color: ${$event.starRating.uncheckedcolor}`);
+
+  onRatingChanged(rating){
+    console.log(rating);
+    this.rating = rating;
   }
   
   onSubmit(form: NgForm) {
