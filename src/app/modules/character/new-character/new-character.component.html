@@ -5,45 +5,53 @@
     <mat-tab label="Identificação">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
             <div>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Nome</mat-label>
-                    <input [(ngModel)]="usuario.nome" id="nome" class="form-control" matInput name="nome" ngModel required #nome="ngModel">
+                    <input [(ngModel)]="usuario.nome" id="nome" class="form-control" matInput name="nome" ngModel
+                        required #nome="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Natureza</mat-label>
-                    <input [(ngModel)]="personagem.natureza" id="natureza" matInput name="natureza" ngModel required #natureza="ngModel">
+                    <input [(ngModel)]="personagem.natureza" id="natureza" matInput name="natureza" ngModel required
+                        #natureza="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Tradição</mat-label>
-                    <input [(ngModel)]="personagem.tradicao" id="tradicao" matInput name="tradicao" ngModel required #tradicao="ngModel">
+                    <input [(ngModel)]="personagem.tradicao" id="tradicao" matInput name="tradicao" ngModel required
+                        #tradicao="ngModel">
                 </mat-form-field>
             </div>
             <div>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Jogador</mat-label>
-                    <input [(ngModel)]="personagem.jogador" id="jogador" matInput name="jogador" ngModel required #jogador="ngModel">
+                    <input [(ngModel)]="personagem.jogador" id="jogador" matInput name="jogador" ngModel required
+                        #jogador="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Essência</mat-label>
-                    <input [(ngModel)]="personagem.essencia" matInput name="essencia" ngModel required #essencia="ngModel">
+                    <input [(ngModel)]="personagem.essencia" matInput name="essencia" ngModel required
+                        #essencia="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Conceito</mat-label>
-                    <input [(ngModel)]="personagem.conceito" id="conceito" class="input-separated" matInput name="conceito" ngModel required #conceito="ngModel">
+                    <input [(ngModel)]="personagem.conceito" id="conceito" class="input-separated" matInput
+                        name="conceito" ngModel required #conceito="ngModel">
                 </mat-form-field>
             </div>
             <div>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Crônica</mat-label>
                     <input [(ngModel)]="personagem.cronica" matInput name="cronica" ngModel required #cronica="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Comportamento</mat-label>
-                    <input [(ngModel)]="personagem.comportamento" id="comportamento" matInput name="comportamento" ngModel required #comportamento="ngModel">
+                    <input [(ngModel)]="personagem.comportamento" id="comportamento" matInput name="comportamento"
+                        ngModel required #comportamento="ngModel">
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="outl">
                     <mat-label>Cabala</mat-label>
-                    <input [(ngModel)]="personagem.cabala" id="cabala" matInput name="cabala" ngModel required #faccao="ngModel">
+                    <input [(ngModel)]="personagem.cabala" id="cabala" matInput name="cabala" ngModel required
+                        #faccao="ngModel">
                 </mat-form-field>
             </div>
             <br>
@@ -52,61 +60,62 @@
                 <button mat-button>Enviar</button>
             </mat-card-actions>
         </form>
-        
+
     </mat-tab>
     <mat-tab label="Atributos">
+
         <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Força</mat-label>
-                <mat-select matNativeControl [(value)]="selected.value" [(ngModel)]="atributo.forca"  id="forca" name="forca" ngModel required
-                #forca="ngModel">
+                <mat-select matNativeControl [(value)]="selected" [(ngModel)]="atributo.forca" id="forca" name="forca"
+                    ngModel required #forca="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Carisma</mat-label>
-                <mat-select matNativeControl [(value)]="selected" [(ngModel)]="atributo.carisma"  id="carisma" name="carisma" ngModel required
-                #carisma="ngModel">
-                    <mat-option *ngFor="let f of options" [value]="f.value">
-                        {{f.label}}
+                <mat-select matNativeControl [(ngModel)]="atributo.carisma" id="carisma" name="carisma" ngModel required
+                    #carisma="ngModel">
+                    <mat-option *ngFor="let c of options" [value]="c.value">
+                        {{c.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Percepção</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.percepcao"  id="percepcao" name="percepcao" ngModel required
-                #percepcao="ngModel">
-                    <mat-option *ngFor="let f of options" [value]="f.value">
-                        {{f.label}}
+                <mat-select matNativeControl [(ngModel)]="atributo.percepcao" id="percepcao" name="percepcao" ngModel
+                    required #percepcao="ngModel">
+                    <mat-option *ngFor="let p of options" [value]="p.value">
+                        {{p.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Destreza</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.destreza"  id="forca" name="destreza" ngModel required
-                #forca="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.destreza" id="forca" name="destreza" ngModel required
+                    #forca="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Manipulação</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.manipulacao"  id="manipulacao" name="manipulacao" ngModel required
-                #manipulacao="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.manipulacao" id="manipulacao" name="manipulacao"
+                    ngModel required #manipulacao="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Inteligência</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.inteligencia"  id="inteligencia" name="inteligencia" ngModel required
-                #inteligencia="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.inteligencia" id="inteligencia" name="inteligencia"
+                    ngModel required #inteligencia="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
@@ -114,44 +123,460 @@
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Vigor</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.vigor"  id="vigor" name="vigor" ngModel required
-                #forca="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.vigor" id="vigor" name="vigor" ngModel required
+                    #forca="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Aparência</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.aparencia"  id="aparencia" name="aparencia" ngModel required
-                #aparencia="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.aparencia" id="aparencia" name="aparencia" ngModel
+                    required #aparencia="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outl">
                 <mat-label>Racioncínio</mat-label>
-                <mat-select matNativeControl [(ngModel)]="atributo.raciocinio"  id="raciocinio" name="raciocinio" ngModel required
-                #raciocinio="ngModel">
+                <mat-select matNativeControl [(ngModel)]="atributo.raciocinio" id="raciocinio" name="raciocinio" ngModel
+                    required #raciocinio="ngModel">
                     <mat-option *ngFor="let f of options" [value]="f.value">
                         {{f.label}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
+        <p>You selected: {{selected}}</p>
     </mat-tab>
     <mat-tab label="Habilidades">
         <div>
-        </div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Prontidao</mat-label>
+                    <mat-select [(value)]="selected"  matNativeControl [(ngModel)]="talentos.prontidao" id="prontidao" name="prontidao" ngModel
+                          required #prontidao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Oficios</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.oficios" id="oficios" name="oficios" ngModel
+                          required #oficios="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Academicos</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.academicos" id="academicos" name="academicos" ngModel
+                          required #academicos="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Esportes</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.esportes" id="esportes" name="esportes" ngModel
+                          required #esportes="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Conducao</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.conducao" id="conducao" name="conducao" ngModel
+                          required #conducao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Computador</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.computador" id="computador" name="computador" ngModel
+                          required #computador="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Consciencia</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.consciencia" id="consciencia" name="consciencia" ngModel
+                          required #consciencia="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Etiqueta</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.etiqueta" id="etiqueta" name="etiqueta" ngModel
+                          required #etiqueta="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Cosmologia</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.cosmologia" id="cosmologia" name="cosmologia" ngModel
+                          required #cosmologia="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Briga</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.briga" id="briga" name="briga" ngModel
+                          required #briga="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Armas_fogo</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.armas_fogo" id="armas_fogo" name="armas_fogo" ngModel
+                          required #armas_fogo="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Enigmas</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.enigmas" id="enigmas" name="enigmas" ngModel
+                          required #enigmas="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Esquiva</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.esquiva" id="esquiva" name="esquiva" ngModel
+                          required #esquiva="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Meditacao</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.meditacao" id="meditacao" name="meditacao" ngModel
+                          required #meditacao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Investigacao</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.investigacao" id="investigacao" name="investigacao" ngModel
+                          required #investigacao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Expressao</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.expressao" id="expressao" name="expressao" ngModel
+                          required #expressao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Armas_brancas</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.armas_brancas" id="armas_brancas" name="armas_brancas" ngModel
+                          required #armas_brancas="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Direito</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.direito" id="direito" name="direito" ngModel
+                          required #direito="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Intimidacao</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.intimidacao" id="intimidacao" name="intimidacao" ngModel
+                          required #intimidacao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Atuacao</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.atuacao" id="atuacao" name="atuacao" ngModel
+                          required #atuacao="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Linguistica</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.linguistica" id="linguistica" name="linguistica" ngModel
+                          required #linguistica="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Lideranca</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.lideranca" id="lideranca" name="lideranca" ngModel
+                          required #lideranca="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Furtividade</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.furtividade" id="furtividade" name="furtividade" ngModel
+                          required #furtividade="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Medicina</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.medicina" id="medicina" name="medicina" ngModel
+                          required #medicina="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Manha</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.manha" id="manha" name="manha" ngModel
+                          required #manha="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Sobrevivencia</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.sobrevivencia" id="sobrevivencia" name="sobrevivencia" ngModel
+                          required #sobrevivencia="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Ocultismo</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.ocultismo" id="ocultismo" name="ocultismo" ngModel
+                          required #ocultismo="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outl">
+                    <mat-label>Labia</mat-label>
+                    <mat-select matNativeControl [(ngModel)]="talentos.labia" id="labia" name="labia" ngModel
+                          required #labia="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Tecnologia</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="pericias.tecnologia" id="tecnologia" name="tecnologia" ngModel
+                          required #tecnologia="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+  
+            <mat-form-field appearance="outl">
+                            <mat-label>Ciencias</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="conhecimento.ciencias" id="ciencias" name="ciencias" ngModel
+                          required #ciencias="ngModel">
+                          <mat-option *ngFor="let f of options" [value]="f.value">
+                              {{f.label}}
+                          </mat-option>
+                      </mat-select>
+                </mat-form-field>
+          </div>
+  
+  
     </mat-tab>
-    <mat-tab label="Esferas">Content 4</mat-tab>
-    <mat-tab label="Vantagens">Content 5</mat-tab>
+    <mat-tab label="Esferas">
+        
+        <div>
+            <mat-form-field appearance="outl">
+                <mat-label>Correspondencia</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.correspondencia" id="correspondencia" name="correspondencia"
+                    ngModel required #correspondencia="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Vida</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.vida" id="vida" name="vida" ngModel required #vida="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Primordios</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.primordio" id="primordios" name="primordio" ngModel required
+                    #primordio="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outl">
+                <mat-label>Entropia</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.entropia" id="entropia" name="entropia" ngModel required
+                    #entropia="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Mente</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.mente" id="mente" name="mente" ngModel required #mente="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Espirito</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.espirito" id="espirito" name="espirito" ngModel required
+                    #espirito="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outl">
+                <mat-label>Forcas</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.forcas" id="forcas" name="forcas" ngModel required
+                    #forcas="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Materia</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.materia" id="materia" name="materia" ngModel required
+                    #materia="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outl">
+                <mat-label>Tempo</mat-label>
+                <mat-select matNativeControl [(ngModel)]="esferas.tempo" id="tempo" name="tempo" ngModel required #tempo="ngModel">
+                    <mat-option *ngFor="let f of options" [value]="f.value">
+                        {{f.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Vantagens">
+        Content 5
+    </mat-tab>
 </mat-tab-group>
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p>
 
 <p>Personagem: {{ personagem.jogador }}</p>
 <p>Atributos: {{ atributo.forca }}</p>
+<p>{{atributo | json}}</p>

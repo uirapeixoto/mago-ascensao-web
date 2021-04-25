@@ -17,6 +17,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select'
 import { HomeCharacterComponent } from './home-character/home-character.component';
 import { FormsModule } from '@angular/forms';
+import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.component'
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     EditCharacterComponent,
     ViewCharacterComponent,
     ListCharactersComponent,
-    HomeCharacterComponent
+    HomeCharacterComponent,
+    StarRatingComponent
   ],
   imports: [
     CommonModule,

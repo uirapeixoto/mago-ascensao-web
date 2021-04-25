@@ -30,7 +30,7 @@ export interface Talentos {
     id_habilidade: number;
     prontidao: number;
     esportes: number;
-    conciencia: number;
+    consciencia: number;
     briga: number;
     esquiva: number;
     expressao: number;
@@ -62,22 +62,23 @@ export interface Conhecimento {
     computador: number;
     enigmas: number;
     investigacao: number;
+    cosmologia : number;
     direito: number;
     linguistica: number;
     medicina: number;
     ocultismo: number;
-    ciencia: number;
+    ciencias: number;
 }
 
 export interface Habilidades {
     id: number;
     idPersonagem: number;
     talentos: Talentos;
-    Pericias: Pericias;
+    pericias: Pericias;
     conhecimento: Conhecimento;
 }
 
-export interface Esperas {
+export interface Esferas {
     id: number;
     id_personagem: number;
     correspondencia: number;
@@ -145,7 +146,7 @@ export interface FichaPersonagem {
     personagem: Personagem;
     atributos: Atributos;
     habilidades: Habilidades;
-    esperas: Esperas;
+    esferas: Esferas;
     vantagens: Vantagens;
     preludio: Preludio;
 }

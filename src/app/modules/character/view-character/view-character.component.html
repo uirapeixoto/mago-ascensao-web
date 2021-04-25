@@ -7,7 +7,7 @@
         </mat-tab>
         <mat-tab label="Atributos">
             <div class="example-large-box mat-elevation-z4">
-                Large content
+                <mat-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
             </div>
         </mat-tab>
     </mat-tab-group>
