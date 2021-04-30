@@ -1,7 +1,6 @@
 import { Atributos, Conhecimento, Esferas, FichaPersonagem, Habilidades, Pericias, Personagem, Talentos, Usuario } from './../../../model/Personagem';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { PropertyBindingType } from '@angular/compiler';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-character',
@@ -9,6 +8,12 @@ import { PropertyBindingType } from '@angular/compiler';
   styleUrls: ['./new-character.component.css']
 })
 export class NewCharacterComponent implements OnInit {
+
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  usuarioFormGroup: FormGroup;
+  isEditable = false;
 
   usuario = {} as  Usuario;
   fichaPersonagem = {} as FichaPersonagem;
@@ -30,7 +35,7 @@ export class NewCharacterComponent implements OnInit {
   ]
   selected = this.options[0].value;
     
-  constructor() { 
+  constructor(private _formBuilder: FormBuilder) { 
     var data = new Date();
     this.usuario.data_criacao = data.toLocaleDateString();
     this.usuario.data_alteracao = data.toLocaleDateString();
@@ -90,6 +95,19 @@ export class NewCharacterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+
+    this.usuarioFormGroup = this._formBuilder.group({
+      usuarioCtrl:['', Validators.required]
+    });
+
+    
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+
   }
 
   onSubmit(form: NgForm) {
@@ -110,5 +128,4 @@ export class NewCharacterComponent implements OnInit {
         console.log(key + ' ' + value); // "a 5", "b 7", "c 9"
       }
   }
-
 }

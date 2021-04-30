@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatTabsModule,
     MatTooltipModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule
   ],
 
   providers: [],

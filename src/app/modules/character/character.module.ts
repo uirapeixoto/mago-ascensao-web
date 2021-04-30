@@ -16,8 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select'
 import { HomeCharacterComponent } from './home-character/home-character.component';
-import { FormsModule } from '@angular/forms';
-import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.component'
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.component';
+import { AtributosPageComponent } from './new-character/pages/atributos-page/atributos-page.component'
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -27,11 +29,13 @@ import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.
     ViewCharacterComponent,
     ListCharactersComponent,
     HomeCharacterComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    AtributosPageComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatTabsModule,
     MatGridListModule,
     MatCardModule,
@@ -42,6 +46,7 @@ import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
+    MatStepperModule,
     RoutingCharacterModule
   ],
   exports: [

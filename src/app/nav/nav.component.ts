@@ -17,7 +17,7 @@ export class NavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-  menuItems = ['home','personagem', 'atributos', 'habilidades', 'esfera', 'vantagens'];
+  menuItems = ['home','personagem'];
   
 
 }

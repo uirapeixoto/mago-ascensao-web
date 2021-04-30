@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlapi: "https://mago-ascensao-api.herokuapp.com",
+  urlapi: "http://localhost:3000",
 };
 
 /*
