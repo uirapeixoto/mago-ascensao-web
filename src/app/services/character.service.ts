@@ -40,7 +40,7 @@ export class CharacterService {
     )
   }
   atualizarUsuario(model: Usuario): Observable<Usuario>{
-    return this.httpClient.put<Usuario>(environment.urlapi +'/usuarios', JSON.stringify(model), this.httpOptions)
+    return this.httpClient.put<Usuario>(environment.urlapi +'/usuarios/'+ model.id, JSON.stringify(model), this.httpOptions)
       .pipe(
         retry(1)
         ,catchError(this.handleError)

@@ -10,8 +10,6 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 export class NewCharacterComponent implements OnInit {
 
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
   usuarioFormGroup: FormGroup;
   isEditable = false;
 
@@ -95,19 +93,6 @@ export class NewCharacterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-
-    this.usuarioFormGroup = this._formBuilder.group({
-      usuarioCtrl:['', Validators.required]
-    });
-
-    
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-
   }
 
   onSubmit(form: NgForm) {

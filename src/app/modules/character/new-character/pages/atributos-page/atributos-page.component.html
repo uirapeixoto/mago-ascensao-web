@@ -1,1 +1,90 @@
-<p>atributos-page works!</p>
+<form (ngSubmit)="onSubmit(a)" #a="ngForm" novalidate>
+    <div>
+        <mat-form-field appearance="outl">
+            <mat-label>Força</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.forca" id="forca" name="forca" ngModel required
+                #forca="ngModel">
+                <mat-option *ngFor="let f of options" [value]="f.value">
+                    {{f.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Carisma</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.carisma" id="carisma" name="carisma" ngModel required
+                #carisma="ngModel">
+                <mat-option *ngFor="let c of options" [value]="c.value">
+                    {{c.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Percepção</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.percepcao" id="percepcao" name="percepcao" ngModel
+                required #percepcao="ngModel">
+                <mat-option *ngFor="let p of options" [value]="p.value">
+                    {{p.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outl">
+            <mat-label>Destreza</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.destreza" id="forca" name="destreza" ngModel required
+                #forca="ngModel">
+                <mat-option *ngFor="let a of options" [value]="a.value">
+                    {{a.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Manipulação</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.manipulacao" id="manipulacao" name="manipulacao" ngModel
+                required #manipulacao="ngModel">
+                <mat-option *ngFor="let f of options" [value]="f.value">
+                    {{f.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Inteligência</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.inteligencia" id="inteligencia" name="inteligencia"
+                ngModel required #inteligencia="ngModel">
+                <mat-option *ngFor="let a of options" [value]="a.value">
+                    {{a.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outl">
+            <mat-label>Vigor</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.vigor" id="vigor" name="vigor" ngModel required
+                #forca="ngModel">
+                <mat-option *ngFor="let f of options" [value]="f.value">
+                    {{f.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Aparência</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.aparencia" id="aparencia" name="aparencia" ngModel
+                required #aparencia="ngModel">
+                <mat-option *ngFor="let a of options" [value]="a.value">
+                    {{a.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outl">
+            <mat-label>Racioncínio</mat-label>
+            <mat-select matNativeControl [(ngModel)]="atributo.raciocinio" id="raciocinio" name="raciocinio" ngModel
+                required #raciocinio="ngModel">
+                <mat-option *ngFor="let a of options" [value]="a.value">
+                    {{a.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</form>
+<p>{{atributo | json}}</p>

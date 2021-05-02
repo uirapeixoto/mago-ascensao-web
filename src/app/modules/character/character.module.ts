@@ -20,6 +20,10 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { StarRatingComponent } from 'src/app/components/star-rating/star-rating.component';
 import { AtributosPageComponent } from './new-character/pages/atributos-page/atributos-page.component'
 import { MatStepperModule } from '@angular/material/stepper';
+import { PersonagemPageComponent } from './new-character/pages/personagem-page/personagem-page.component';
+import { HabilidadesPageComponent } from './new-character/pages/habilidades-page/habilidades-page.component';
+import { EsferaPageComponent } from './new-character/pages/esfera-page/esfera-page.component';
+import { VantagensPageComponent } from './new-character/pages/vantagens-page/vantagens-page.component';
 
 
 @NgModule({
@@ -30,7 +34,11 @@ import { MatStepperModule } from '@angular/material/stepper';
     ListCharactersComponent,
     HomeCharacterComponent,
     StarRatingComponent,
-    AtributosPageComponent
+    AtributosPageComponent,
+    PersonagemPageComponent,
+    HabilidadesPageComponent,
+    EsferaPageComponent,
+    VantagensPageComponent
   ],
   imports: [
     CommonModule,

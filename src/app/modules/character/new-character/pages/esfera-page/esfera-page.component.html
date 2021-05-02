@@ -1,0 +1,16 @@
+<p>esfera-page works!</p>
+<form (ngSubmit)="onSubmit(e)" #e="ngForm" novalidate>
+    <div class="example-large-box mat-elevation-z4">
+        <mat-label>Correspondência</mat-label>
+        <mat-star-rating [(ngModel)]="esferas.correspondencia" 
+        ngModel required 
+        #correspondencia="ngModel"
+        [rating]="rating" 
+        [starCount]="starCount"
+        [color]="starColor" 
+        (ratingUpdated)="onRatingChanged($event)">
+        </mat-star-rating>
+    </div>
+</form>
+<p>{{ correspondencia }}</p>
+<p>{{esferas | json}}</p>
