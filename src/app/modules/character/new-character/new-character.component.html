@@ -7,7 +7,7 @@
 <mat-horizontal-stepper linear #stepper>
   <mat-step [editable]="isEditable">
     <ng-template matStepLabel>Personagem</ng-template>
-    <app-personagem-page></app-personagem-page>
+    <app-personagem-page [item]="currentItem"></app-personagem-page>
     <div>
       <button mat-button matStepperNext>Next</button>
     </div>
