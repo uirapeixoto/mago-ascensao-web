@@ -9,7 +9,8 @@ import { CharacterService } from 'src/app/services/character.service';
   styleUrls: ['./personagem-page.component.css']
 })
 export class PersonagemPageComponent implements OnInit {
-
+  
+  currentItem = 'Television';
   personagem = {} as Personagem;
   usuario = {} as Usuario;
   fichaPersonagem = {} as FichaPersonagem;
@@ -20,6 +21,8 @@ export class PersonagemPageComponent implements OnInit {
     
     this._api.buscarUsuarioPorId(this.id).subscribe((response:Usuario) => {
       this.usuario = response;
+      this.personagem = response.ficha_personagem[0].personagem;
+      this.preludio = response.ficha_personagem[0].preludio;
     })
     
   }
