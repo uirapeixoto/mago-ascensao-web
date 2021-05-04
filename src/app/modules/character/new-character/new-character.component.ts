@@ -1,6 +1,7 @@
 import { Usuario } from './../../../model/Personagem';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-new-character',
@@ -14,6 +15,7 @@ export class NewCharacterComponent implements OnInit {
   isEditable = false;
 
   @Input() receberUsuario;
+  @Output() respostaUsuario = new EventEmitter();
 
   usuario = {} as  Usuario;
     
@@ -35,5 +37,9 @@ export class NewCharacterComponent implements OnInit {
       }
       console.log(key + ' ' + value); // "a 5", "b 7", "c 9"
     }
+  }
+
+  feedback() {
+    console.log('Resposta para o component pai', this.respostaUsuario.emit({"nome": "Raphella", "SobreNome": "Souza"}));
   }
 }
