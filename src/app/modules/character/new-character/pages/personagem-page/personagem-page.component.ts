@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FichaPersonagem, Personagem, Preludio, Usuario } from 'src/app/model/Personagem';
 import { CharacterService } from 'src/app/services/character.service';
@@ -10,6 +10,10 @@ import { CharacterService } from 'src/app/services/character.service';
 })
 export class PersonagemPageComponent implements OnInit {
   
+  @Input() receberUsuario;
+  @Output() respostaUsuario  = new EventEmitter();
+
+
   currentItem = 'Television';
   personagem = {} as Personagem;
   usuario = {} as Usuario;
@@ -28,6 +32,8 @@ export class PersonagemPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      console.log(this.receberUsuario);
+      console.log('Objeto familia recebido do component pai via Input: ', this.respostaUsuario);
   }
 
   onSubmit(form: NgForm) {
