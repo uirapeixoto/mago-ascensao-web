@@ -1,4 +1,4 @@
-import { Usuario } from './../../../model/Personagem';
+import { Personagem, Usuario } from './../../../model/Personagem';
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Output } from '@angular/core';
@@ -14,7 +14,7 @@ export class NewCharacterComponent implements OnInit {
   usuarioFormGroup: FormGroup;
   isEditable = false;
 
-  @Input() receberUsuario;
+  @Input() receberPersonagem : Personagem;
   @Output() respostaUsuario = new EventEmitter();
 
   usuario = {} as  Usuario;
@@ -26,7 +26,8 @@ export class NewCharacterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.receberUsuario);
+    console.log('new-character');
+    console.log(this.receberPersonagem);
   }
 
   mostrarProps(obj) {
@@ -41,5 +42,10 @@ export class NewCharacterComponent implements OnInit {
 
   feedback() {
     console.log('Resposta para o component pai', this.respostaUsuario.emit({"nome": "Raphella", "SobreNome": "Souza"}));
+  }
+
+  // função para receber emit Output do Filho
+  reciverFeedback(respostaFilho) {
+    console.log('Foi emitido o evento e chegou no pai >>>> ', respostaFilho);
   }
 }
