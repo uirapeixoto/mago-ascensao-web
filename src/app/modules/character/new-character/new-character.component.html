@@ -7,14 +7,14 @@
 <mat-horizontal-stepper linear #stepper>
   <mat-step [editable]="isEditable">
     <ng-template matStepLabel>Personagem</ng-template>
-    <app-personagem-page [recebeFamilia]="familia" (respostaFamilia)="reciverFeedback($event)"></app-personagem-page>
+    <app-personagem-page [receberPersonagem]="personagem" (respostaUsuario)="reciverFeedback($event)"></app-personagem-page>
     <div>
       <button mat-button matStepperNext>Next</button>
     </div>
   </mat-step>
   <mat-step [editable]="isEditable">
     <ng-template matStepLabel>Atributos</ng-template>
-    <app-atributos-page></app-atributos-page>
+    <app-atributos-page (respostaPersonagem)="reciverFeedback($event)"></app-atributos-page>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>

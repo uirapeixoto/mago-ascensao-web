@@ -10,7 +10,7 @@ import { CharacterService } from 'src/app/services/character.service';
 })
 export class PersonagemPageComponent implements OnInit {
   
-  @Input() receberUsuario;
+  @Input() recebePersonagem : Personagem;
   @Output() respostaUsuario  = new EventEmitter();
 
 
@@ -32,7 +32,8 @@ export class PersonagemPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      console.log(this.receberUsuario);
+      this.recebePersonagem = this.personagem;
+      console.log(this.recebePersonagem);
       console.log('Objeto familia recebido do component pai via Input: ', this.respostaUsuario);
   }
 
@@ -55,5 +56,7 @@ export class PersonagemPageComponent implements OnInit {
     console.log("objeto persongem");
     console.log(this.fichaPersonagem);
   }
+
+  
 
 }
