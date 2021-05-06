@@ -18,6 +18,7 @@ export class NewCharacterComponent implements OnInit {
   @Output() respostaUsuario = new EventEmitter();
 
   usuario = {} as  Usuario;
+  personagem = {} as Personagem;
     
   constructor(private _formBuilder: FormBuilder) { 
     var data = new Date();
@@ -27,7 +28,6 @@ export class NewCharacterComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('new-character');
-    console.log(this.receberPersonagem);
   }
 
   mostrarProps(obj) {

@@ -10,7 +10,7 @@ import { CharacterService } from 'src/app/services/character.service';
 })
 export class PersonagemPageComponent implements OnInit {
   
-  @Input() recebePersonagem : Personagem;
+  @Input() receberPersonagem : Personagem;
   @Output() respostaUsuario  = new EventEmitter();
 
 
@@ -32,8 +32,8 @@ export class PersonagemPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.recebePersonagem = this.personagem;
-      console.log(this.recebePersonagem);
+      
+      console.log(this.receberPersonagem);
       console.log('Objeto familia recebido do component pai via Input: ', this.respostaUsuario);
   }
 
@@ -43,9 +43,8 @@ export class PersonagemPageComponent implements OnInit {
     this.usuario.data_alteracao = data.toLocaleDateString('pt-BR');;
     this.fichaPersonagem.personagem = this.personagem;
     this.fichaPersonagem.preludio = this.preludio;
-
     this.usuario.ficha_personagem[0] = this.fichaPersonagem;
-
+    this.receberPersonagem = this.personagem;
     console.log(this.usuario);
     
     this._api.atualizarUsuario(this.usuario).subscribe((response:Usuario) =>{
